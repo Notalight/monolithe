@@ -27,9 +27,9 @@ void monolitheApp::setup()
 	cv::Mat input( toOcv( surface ) );
 	cv::Mat output;
     
-	cv::medianBlur( input, output, 11 );
-    //	cv::Sobel( input, output, CV_8U, 0, 1 );
-    //	cv::threshold( input, output, 128, 255, CV_8U );
+	//cv::medianBlur( input, output, 11 );
+    //cv::Sobel( input, output, CV_8U, 0, 1 );
+    cv::threshold( input, output, 128, 255, CV_8U );
     
 	mTexture = gl::Texture( fromOcv( output ) );
 
